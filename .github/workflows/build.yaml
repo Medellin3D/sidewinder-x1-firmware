@@ -26,3 +26,8 @@ jobs:
           pip install platformio
       - name: Run PlatformIO
         run: python -m platformio run
+      - name: Archive bin artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: .pio/build/megaatmega2560/firmware.hex
